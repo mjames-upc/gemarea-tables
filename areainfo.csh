@@ -1,6 +1,12 @@
 #!/bin/csh
+#
+# dumps imgtyp.tbl entries for McIDAS AREA files
+# (entries still need formatting)
 source /home/gempak/GEMPAK7/Gemenviron
-cd areas/
+
+# go-to $SAT
+cd ~ldm/data/areas/
+
 echo '# !------------------------------------------------------------------------------'
 foreach file ( `find ./ -type f` )
   set filestring = `echo $file:q | sed 's/\// /g'`
@@ -14,7 +20,7 @@ foreach file ( `find ./ -type f` )
         set imgType = $filestring[4]
   endif
   if ( $command[8] > 100 ) then
-  	set power = `/usr/bin/python /home/mjames/arinfo/po2.py $command[8]`
+  	set power = `/usr/bin/python /home/mjames/arinfo/log.py $command[8]`
   	echo $satName'               '$imgType'           0    255  '$command[25]'   2**'$power'     1 GRAY'
   else
 	set imgPower = $command[8]

@@ -1,4 +1,7 @@
 #!/usr/bin/python
+#
+# return log base 2 of satellite ID number
+# M.James/Unidata	01/14	Created
 import sys
 import math
 

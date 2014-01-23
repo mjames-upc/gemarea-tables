@@ -1,2 +1,2 @@
 run as 
-	./areainfo.csh > file.tbl
+	./areainfo.csh | sort | uniq > file.tbl
